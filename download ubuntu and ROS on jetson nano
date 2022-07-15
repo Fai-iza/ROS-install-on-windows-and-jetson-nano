@@ -1,0 +1,61 @@
+1-	Download ubuntu 20.04 from the following link:
+
+https://github.com/Discombobulated88/Xubuntu-20.04-L4T-32.3.1/releases/download/v1.0/Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
+
+2-	Extract the downloaded file, then enter the folder and extract the .tar file 
+
+3-	Download a program to flash your SD card:
+
+https://www.balena.io/etcher/
+
+go to terminal and type the following command to extract the ubuntu image:
+
+tar -xvjf Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
+
+4-	Open the program and select the image, then select the device and then flash:
+
+5-	After the flash has finished, and the booting process has finished, Configure the system to install ubuntu 
+Install ROS
+
+6-	In terminal type the following commands:
+
+locale  
+
+sudo apt update && sudo apt install locales
+
+sudo locale-gen en_US en_US.UTF-8
+
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+locale 
+
+apt-cache policy | grep universe
+
+7-	Add ROS 2 repository to your system and source list:
+
+sudo apt update && sudo apt install curl gnupg2 lsb-release
+
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+
+8-	Update your apt repository by typing the following command:
+
+sudo apt update
+
+9-	Type the following command to install ROS base: 
+
+sudo apt install ros-foxy-ros-base
+
+
+10-	Run the following command to set up your environment:
+
+source /opt/ros/foxy/setup.bash
+
+
+11-	run the following command to make sure that ROS is successfully running:
+
+ros2 topic list 
+
+
