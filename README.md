@@ -47,13 +47,18 @@ Note: you should have information about ROS like the version of ROS
 # install ROS on jetson nano
 1-	Download ubuntu 20.04 from the following link
 https://github.com/Discombobulated88/Xubuntu-20.04-L4T-32.3.1/releases/download/v1.0/Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
+
 2-	Extract the downloaded file, then enter the folder and extract the .tar file 
+
 3-	Download a program to flash your SD card 
 https://www.balena.io/etcher/
 go to terminal and type the following command to extract the ubuntu image 
 tar -xvjf Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
+
 4-	Open the program and select the image, then select the device and then flash 
+
 5-	After the flash has finished, and the booting process has finished, Configure the system to install ubuntu 
+
 ### Install ROS
 6-	In terminal type the following commands 
 locale  
