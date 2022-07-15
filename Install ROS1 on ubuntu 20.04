@@ -1,0 +1,39 @@
+
+1-	In ubuntu open the terminal 
+
+2-	Setup sources.list( to find ROS after installing it) by typing the following command in terminal:
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+note: after typing the command, you’re required to type your ubuntu password 
+
+3-	Set up your keys by typing the following commands in terminal: 
+
+sudo apt install curl
+
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+4-	Type the following command in the terminal to make sure your Debian packages index is up to date:
+
+sudo apt update
+
+5-	Type the following command to install the desktop full package of ROS:
+
+sudo apt install ros-noetic-desktop-full
+
+note: this may take a while(1 to 2 hours depending on your internet connection)
+
+6-	Type the following commandset to setup the environment:
+
+source /opt/ros/noetic/setup.bash
+
+7-	Type the following command to echo bashrc:
+
+ echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+
+8-	Type the following command to make sure that ROS has been installed: 
+
+roscore
+
+Note: you should have information about ROS like the version of ROS
+
