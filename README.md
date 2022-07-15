@@ -8,36 +8,36 @@ installing ROS on jetson nano has 5 steps before installing ROS, the first 5 ste
 
 # install ROS on ubuntu (windows)
 1-	In ubuntu open the terminal 
-2-	Setup sources.list( to find ROS after installing it) by typing the following command in terminal 
+2-	Setup sources.list( to find ROS after installing it) by typing the following command in terminal: 
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
 note: after typing the command, you’re required to type your ubuntu password 
 
-3-	Set up your keys by typing the following commands in terminal 
+3-	Set up your keys by typing the following commands in terminal: 
 
 sudo apt install curl
 
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 
-4-	Type the following command in the terminal to make sure your Debian packages index is up to date
+4-	Type the following command in the terminal to make sure your Debian packages index is up to date:
 
 sudo apt update
 
-5-	Type the following command to install the desktop full package of ROS
+5-	Type the following command to install the desktop full package of ROS:
 
 sudo apt install ros-noetic-desktop-full
 
 note: this may take a while(1 to 2 hours depending on your internet connection)
 
-6-	Type the following commandset upetup the environment
+6-	Type the following commandset upetup the environment:
 
 source /opt/ros/noetic/setup.bash
 
-7-	Type the following command to echo bashrc
+7-	Type the following command to echo bashrc:
 
  echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
-8-	Type the following command to make sure that ROS has been installed 
+8-	Type the following command to make sure that ROS has been installed: 
 
 roscore
 
@@ -45,14 +45,14 @@ Note: you should have information about ROS like the version of ROS
 
 
 # install ROS on jetson nano
-1-	Download ubuntu 20.04 from the following link
+1-	Download ubuntu 20.04 from the following link:
 https://github.com/Discombobulated88/Xubuntu-20.04-L4T-32.3.1/releases/download/v1.0/Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
 
 2-	Extract the downloaded file, then enter the folder and extract the .tar file 
 
-3-	Download a program to flash your SD card 
+3-	Download a program to flash your SD card:
 https://www.balena.io/etcher/
-go to terminal and type the following command to extract the ubuntu image 
+go to terminal and type the following command to extract the ubuntu image: 
 tar -xvjf Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
 
 4-	Open the program and select the image, then select the device and then flash 
@@ -60,7 +60,8 @@ tar -xvjf Xubuntu-20.04-l4t-r32.3.1.tar.tbz2
 5-	After the flash has finished, and the booting process has finished, Configure the system to install ubuntu 
 
 ### Install ROS
-6-	In terminal type the following commands 
+6-	In terminal type the following commands:
+
 locale  
 
 sudo apt update && sudo apt install locales
@@ -75,24 +76,29 @@ locale
 apt-cache policy | grep universe
 
 7-	Add ROS 2 repository to your system and source list:
+
 sudo apt update && sudo apt install curl gnupg2 lsb-release
+
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
-8-	Update your apt repository by typing the following command 
+8-	Update your apt repository by typing the following command:
+
 sudo apt update
 
-9-	Type the following command to install ROS base 
+9-	Type the following command to install ROS base: 
 
 sudo apt install ros-foxy-ros-base
 
 
-10-	Run the following command to set up your environment 
+10-	Run the following command to set up your environment:
+
 source /opt/ros/foxy/setup.bash
 
 
-11-	run the following command to make sure that ROS is successfully running  
+11-	run the following command to make sure that ROS is successfully running:
+
 ros2 topic list 
 
 
